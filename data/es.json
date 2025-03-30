@@ -1,0 +1,65 @@
+{
+    "header": {
+        "task-button": "Tareas",
+        "tag-button": "Etiquetas",
+        "search-placeholder": "Buscar",
+        "task-creator-button": "Crear",
+        "notification-button": "Notificaciones",
+        "profile-and-settings": "Perfil y configuraciones"
+    },
+    "header-menus": {
+        "note-creator-button": "Crear nota",
+        "checkbox-creator-button": "To-do list con casillas de verificacion",
+        "single-task-creator-button": "Una sola tarea",
+        "no-notifications": "No hay notificaciones",
+        "pending-tasks": "Tareas Pendientes",
+        "settings-button": "Configuracion",
+        "single-tasks-completed-button": "Tareas completas"
+    },
+    "window-header": {
+        "return-button": "Volver",
+        "add-tag-button": "Agregar Etiqueta",
+        "add-reminder-button": "Agregar Recordatorio",
+        "delete-task-button": "Eliminar"
+    },
+    "add-tag-window": {
+        "tag-text": "Etiquetas",
+        "add-tag-placeholder": "Agregar etiqueta",
+        "empty-field-error-message": "Campo vacio",
+        "characters-error-message": "Escriba una etiqueta mas corta"
+    },
+    "reminder-window": {
+        "reminder-text": "Recordatorio",
+        "empty-date-error-message": "Fecha vacia",
+        "save-reminder": "Guardar",
+        "edit-reminder": "Editar"
+    },
+    "task-window-content": {
+        "title-placeholder": "Titulo",
+        "note-placeholder": "Nota",
+        "single-task-placeholder": "Tarea",
+        "completed-tasks": "Tareas Terminadas" 
+    },
+    "settings-window": {
+        "settings-text": "Configuracion",
+        "profile-button": "Perfil",
+        "language-button": "Idioma",
+        "theme-button": "Tema"
+    },
+    "profile-content": {
+        "user-name": "Nombre de usuario",
+        "email": "Email"
+    },
+    "language-content": {
+        "spanish": "Español",
+        "english": "Ingles"
+    },
+    "messages": {
+        "no-tasks-text": "No hay tareas por el momento",
+        "no-tags-text": "No hay etiquetas por el momento",
+        "no-tasks-in-tag-text": "No hay tareas en esta etiqueta",
+        "task-completed-message-text": "Tarea completada",
+        "remove-reminder-message": "¿Desea remover el recordatorio?",
+        "no-single-tasks-message-text": "No hay tareas completadas"
+    }
+}

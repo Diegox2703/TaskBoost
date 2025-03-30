@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>To Do List</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="styles.css" type="text/css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Anton&family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Madimi+One&family=Micro+5&family=Oswald:wght@200..700&family=Permanent+Marker&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rock+3D&family=Tac+One&family=Teko:wght@300..700&family=Whisper&family=Zeyada&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/e0b40169ad.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="website-container">
+            <div id="header"></div>
+            <div class="header">
+                <div class="header-first-elements">
+                    <div class="normal-button-style menu-button">
+                        <span class="material-symbols-outlined icon">menu</span>
+                    </div>
+                    <h1 class="website-logo">To-Do-List</h1>
+                    <div class="header-first-buttons">
+                        <div class="special-button-style tasks-button">
+                            <span class="tasks-button-text" data-section="header" data-value="task-button">Tareas</span>
+                            <input class="toggle-tasks-tags toggle-tasks" name="toggle-tasks-tags" value="all-tasks" type="radio" multiple checked/>
+                        </div>
+                        <div class="special-button-style tags-button">
+                            <span class="tags-button-text" data-section="header" data-value="tag-button">Etiquetas</span>
+                            <input class="toggle-tasks-tags toggle-tags" name="toggle-tasks-tags" value="all-tags" type="radio" multiple/>
+                        </div>
+                    </div>
+                </div>
+                <div class="search-bar-container">                  
+                    <input class="search-bar" type="search" placeholder="Buscar" data-section="header" data-value="search-placeholder">
+                    <span class="material-symbols-outlined search-bar-icon icon">search</span>
+                    <div class="search-result-container"></div>
+                </div>
+                <div class="header-button-container">
+                    <div class="button-header create-button">
+                        <span class="material-symbols-outlined create-icon icon">add</span>
+                        <button class="toggle"></button>
+                        <p class="button-text" data-section="header" data-value="task-creator-button">Crear</p>
+                        <div class="dropdown-menu dropdown-menu-creator-button">
+                            <div class="dropdown-menu-option to-do-list-creator-button note-creator-button" data-value="note-window">
+                                <span class="material-symbols-outlined icon">description</span>
+                                <p data-section="header-menus" data-value="note-creator-button">Crear nota</p>
+                            </div>
+                            <div class="dropdown-menu-option to-do-list-creator-button checkbox-creator-button" data-value="checkbox-tasks-window">
+                                <span class="material-symbols-outlined icon">checklist</span>
+                                <p data-section="header-menus" data-value="checkbox-creator-button">To-do list con casillas de verificacion</p>
+                            </div>
+                            <div class="dropdown-menu-option to-do-list-creator-button single-task-creator-button" data-value="single-task-window">
+                                <span class="material-symbols-outlined icon">check_box</span>
+                                <p data-section="header-menus" data-value="single-task-creator-button">Una sola tarea</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="normal-button-style button-header notifications-button">
+                        <span class="material-symbols-outlined notification-icon icon">notifications</span>
+                        <button class="toggle"></button>
+                        <div class="notification-dot"></div>
+                        <p class="button-text button-text-notification" data-section="header" data-value="notification-button">Notificaciones</p>
+                        <div class="dropdown-menu dropdown-menu-notifications">
+                            <h2 class="number-of-pending-tasks"></h2>
+                            <div class="notification-message-container">
+                                <h2 class="no-notifications-message" data-section="header-menus" data-value="no-notifications">No hay notificaciones</h2>
+                            </div>
+                            <div class="dropdown-menu-option-container"></div>
+                        </div>
+                    </div>
+                    <div class="normal-button-style button-header profile-settings-button">
+                        <div class="profile-settings-container">
+                            <img class="profile-image" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"/>
+                            <span class="material-symbols-outlined arrowdown-icon icon">keyboard_arrow_down</span>
+                        </div>
+                        <button class="toggle"></button>
+                        <p class="button-text button-text-profile" data-section="header" data-value="profile-and-settings">Perfil y configuraciones</p>
+                        <div class="dropdown-menu dropdown-menu-profile-settings">
+                            <div class="dropdown-menu-option dropdown-menu-option-profile">
+                                <img class="dropdown-menu-profile-image" src="assets/default-profile.png"/>
+                                <div class="dropdown-menu-profile-information">
+                                    <b class="dropdown-menu-profile-name">Usuario123</b>
+                                    <p class="dropdown-menu-profile-email">usario132@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="dropdown-menu-option dropdown-menu-option-settings">
+                                <span class="material-symbols-outlined icon">settings</span>
+                                <p data-section="header-menus" data-value="settings-button">Configuracion</p>
+                            </div>
+                            <div class="dropdown-menu-option single-tasks-completed-button">
+                                <span class="material-symbols-outlined icon">fact_check</span>
+                                <p data-section="header-menus" data-value="single-tasks-completed-button">Tareas completas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-buttons-responsive">
+                <div class="special-button-style tasks-button">
+                    <span class="tasks-button-text" data-section="header" data-value="task-button">Tareas</span>
+                    <input class="toggle-tasks-tags responsive-toggle-tasks" name="responsive-toggle-tasks-tags" value="all-tasks" type="radio" checked multiple/>
+                </div>
+                <div class="special-button-style tags-button">
+                    <span class="tags-button-text" data-section="header" data-value="tag-button">Etiquetas</span>
+                    <input class="toggle-tasks-tags responsive-toggle-tags" name="responsive-toggle-tasks-tags" value="all-tags" type="radio" multiple/>
+                </div>
+            </div>
+            <div class="side-menu-background">
+                <div class="side-menu">
+                    <div class="side-menu-header">
+                        <div class="normal-button-style close-menu-button">
+                            <span class="material-symbols-outlined">close</span>
+                        </div>
+                        <h1 class="website-logo side-menu-logo">To-Do-List</h1>
+                    </div>
+                    <div class="side-menu-content">
+                        <div class="dropdown-menu-option dropdown-menu-option-profile">
+                            <img class="dropdown-menu-profile-image" src="assets/default-profile.png"/>
+                            <div class="dropdown-menu-profile-information">
+                                <b class="dropdown-menu-profile-name">Usuario123</b>
+                                <p class="dropdown-menu-profile-email">usario132@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="dropdown-menu-option dropdown-menu-option-settings">
+                            <span class="material-symbols-outlined">settings</span>
+                            <p data-section="header-menus" data-value="settings-button">Configuracion</p>
+                        </div>
+                        <div class="dropdown-menu-option single-tasks-completed-button">
+                            <span class="material-symbols-outlined">fact_check</span>
+                            <p data-section="header-menus" data-value="single-tasks-completed-button">Tareas completas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="all-tasks">
+                    <div class="no-tasks-message">
+                        <span class="material-symbols-outlined no-tasks-icon">assignment</span>
+                        <p class="no-tasks-text" data-section="messages" data-value="no-tasks-text">No hay tareas por el momento</p>
+                    </div>
+                    <div class="tasks"></div>
+                </div>
+                <div class="all-tags">
+                    <div class="no-tags-message">
+                        <span class="material-symbols-outlined no-tags-icon">label_off</span>
+                        <p class="no-tags-text" data-section="messages" data-value="no-tags-text">No hay etiquetas creadas</p>
+                    </div>
+                    <div class="tag-options-container">
+                        <p class="tag-selected"></p>
+                        <button class="toggle-tags-options"></button>
+                        <ul class="dropdown-menu tag-options"></ul>
+                    </div>
+                    <div class="tasks-container"></div>
+                    <div class="no-tasks-in-tag-message">
+                        <p class="no-tasks-in-tag-text" data-section="messages" data-value="no-tasks-in-tag-text">No hay tareas en esta etiqueta</p>
+                    </div>
+                </div>
+                <a href="#header" class="go-up-button">
+                    <span class="material-symbols-outlined">arrow_upward</span>
+                </a>
+            </div>
+            <div class="footer"></div>
+            <div class="search-result-background"></div>
+            <div class="to-do-list-window-background">
+                <div class="checkbox-tasks-window" data-selected="false">
+                    <div class="checkbox-tasks-window-header">
+                        <div class="normal-button-style return-button">
+                            <span class="material-symbols-outlined">arrow_back</span>
+                            <p class="button-text-window return-text" data-section="window-header" data-value="return-button">Volver</p>
+                        </div>
+                        <div class="tag-reminder-delete-button-container">
+                            <div class="normal-button-style tag-window-button">
+                                <span class="material-symbols-outlined">new_label</span>
+                                <p class="button-text-window tag-text-button" data-section="window-header" data-value="add-tag-button">Agregar Etiqueta</p>
+                            </div>
+                            <div class="normal-button-style reminder-button-window">
+                                <span class="material-symbols-outlined">calendar_add_on</span>
+                                <p class="button-text-window reminder-text" data-section="window-header" data-value="add-reminder-button">Agregar Recordatorio</p>
+                            </div>
+                            <div class="normal-button-style delete-button-window">
+                                <span class="material-symbols-outlined">delete</span>
+                                <p class="button-text-window delete-text" data-section="window-header" data-value="delete-task-button">Eliminar</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checkbox-tasks-window-content">
+                        <div class="editable-checkbox-tasks-container">
+                            <h2 contenteditable="true" maxlength="90" class="editable-to-do-list-title" data-section="task-window-content" data-value="title-placeholder" data-placeholder="Titulo"></h2>
+                            <div class="uncompleted-editable-checkbox-tasks"></div>
+                            <div class="add-new-task-container">
+                                <div class="add-new-task-button">
+                                    <span class="material-symbols-outlined">add</span>
+                                </div>
+                            </div>
+                            <div class="number-of-completed-tasks-window-container">
+                                <p class="number-of-completed-tasks-window"></p>
+                                <span class="material-symbols-outlined expand-more-icon">expand_more</span>
+                            </div>
+                            <div class="completed-editable-checkbox-tasks"></div>
+                        </div>
+                    </div>
+                    <div class="checkbox-tasks-window-footer">
+                        <div class="tags-reminders-container">
+                            <div class="reminder-container">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-window" data-selected="false">
+                    <div class="note-window-header">
+                        <div class="normal-button-style return-button">
+                            <span class="material-symbols-outlined">arrow_back</span>
+                            <p class="button-text-window return-text" data-section="window-header" data-value="return-button">Volver</p>
+                        </div>
+                        <div class="tag-reminder-delete-button-container">
+                            <div class="normal-button-style tag-window-button">
+                                <span class="material-symbols-outlined">new_label</span>
+                                <p class="button-text-window tag-text-button" data-section="window-header" data-value="add-tag-button">Agregar Etiqueta</p>
+                            </div>
+                            <div class="normal-button-style reminder-button-window">
+                                <span class="material-symbols-outlined">calendar_add_on</span>
+                                <p class="button-text-window reminder-text" data-section="window-header" data-value="add-reminder-button">Agregar Recordatorio</p>
+                            </div>
+                            <div class="normal-button-style delete-button-window">
+                                <span class="material-symbols-outlined">delete</span>
+                                <p class="button-text-window delete-text" data-section="window-header" data-value="delete-task-button">Eliminar</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="note-window-content">
+                        <div class="editable-note-container">
+                            <h2 maxlength="90" contenteditable="true" class="editable-to-do-list-title" data-section="task-window-content" data-value="title-placeholder" data-placeholder="Titulo"></h2>
+                            <div class="editable-note-text-container">
+                                <div contenteditable="true" class="editable-note-text" data-section="task-window-content" data-value="note-placeholder" data-placeholder="Nota"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="note-window-footer">
+                        <div class="tags-reminders-container">
+                            <div class="reminder-container">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="single-task-window" data-selected="false">
+                    <div class="single-task-window-header">
+                        <div class="normal-button-style return-button">
+                            <span class="material-symbols-outlined">arrow_back</span>
+                            <p class="button-text-window return-text" data-section="window-header" data-value="return-button">Volver</p>
+                        </div>
+                        <div class="tag-reminder-delete-button-container">
+                            <div class="normal-button-style tag-window-button">
+                                <span class="material-symbols-outlined">new_label</span>
+                                <p class="button-text-window tag-text-button" data-section="window-header" data-value="add-tag-button">Agregar Etiqueta</p>
+                            </div>
+                            <div class="normal-button-style reminder-button-window">
+                                <span class="material-symbols-outlined">calendar_add_on</span>
+                                <p class="button-text-window reminder-text" data-section="window-header" data-value="add-reminder-button">Agregar Recordatorio</p>
+                            </div>
+                            <div class="normal-button-style delete-button-window">
+                                <span class="material-symbols-outlined">delete</span>
+                                <p class="button-text-window delete-text" data-section="window-header" data-value="delete-task-button">Eliminar</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-task-window-content">
+                        <div class="editable-single-task-container">
+                            <div class="editable-single-task-content">
+                                <div class="checked-checkbox-container single-task-checkbox">
+                                    <label class="checkbox-box">
+                                        <span class="checkbox-background"></span>
+                                        <input class="checkbox" type="checkbox"/>
+                                    </label>
+                                </div>
+                                <div class="editable-single-task-text-container">
+                                    <div contenteditable="true" class="editable-task-text" data-section="task-window-content" data-value="single-task-placeholder" data-placeholder="Tarea"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-task-window-footer">
+                        <div class="tags-reminders-container">
+                            <div class="reminder-container">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tag-window-background">
+                <div class="box-style tag-window">
+                    <div class="tag-window-header">
+                        <div class="normal-button-style tag-window-return-button">
+                            <span class="material-symbols-outlined">arrow_back</span>
+                        </div>
+                        <p class="tag-window-header-text" data-section="add-tag-window" data-value="tag-text">Etiquetas</p>
+                    </div>
+                    <div class="create-tag-container">
+                        <span class="material-symbols-outlined icon">add</span>
+                        <div class="add-new-tag-field-container">
+                            <input maxlength="51" class="input-style add-new-tag-field" type="text" placeholder="Agregar etiqueta" data-section="add-tag-window" data-value="add-tag-placeholder"/>
+                            <span class="error-message empty-field-error-message" data-section="add-tag-window" data-value="empty-field-error-message">Campo vacio</span>
+                            <span class="error-message characters-error-message" data-section="add-tag-window" data-value="characters-error-message">Escriba una etiqueta mas corta</span>
+                        </div>
+                        <div class="normal-button-style add-new-tag-button">
+                            <span class="material-symbols-outlined">chevron_right</span>    
+                        </div>
+                    </div>
+                    <div class="tags-container"></div>
+                    <div class="tags-error-message-container">
+                        <span class="tags-error-message">Maximo 5 etiquetas</span>
+                    </div>
+                </div>
+            </div>
+            <div class="reminder-window-background">
+                <div class="box-style reminder-window">
+                    <div class="reminder-window-header">
+                        <div class="normal-button-style reminder-window-return-button">
+                            <span class="material-symbols-outlined">arrow_back</span>
+                        </div>
+                        <p class="reminder-window-header-text" data-section="reminder-window" data-value="reminder-text">Recordatorio</p>
+                    </div>
+                    <div class="set-reminder-container">
+                        <div class="normal-button-style delete-date">
+                            <span class="material-symbols-outlined">delete</span>
+                        </div>
+                        <div class="date-container">
+                            <input class="set-reminder" type="date"/>
+                            <span class="empty-date-error-message" data-section="reminder-window" data-value="empty-date-error-message">Fecha vacia</span>
+                        </div>
+                    </div>
+                    <div class="save-reminder-button-container">
+                        <div class="special-button-style-2 save-reminder-button">
+                            <p class="save-reminder-button-text" data-section="reminder-window" data-value="save-reminder">Guardar</p>
+                        </div>
+                        <div class="special-button-style-2 edit-reminder-button">
+                            <p class="edit-reminder-button-text" data-section="reminder-window" data-value="edit-reminder">Editar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="settings-window-background">
+                <div class="box-style settings-window">
+                    <div class="settings-window-header">
+                        <div class="normal-button-style close-settings-button">
+                            <span class="material-symbols-outlined">close</span>
+                        </div>
+                        <div class="settings-text-container">
+                            <h2 class="label settings-text" data-section="settings-window" data-value="settings-text">Configuración</h2>
+                        </div>
+                    </div>
+                    <div class="settings-window-content">
+                        <div class="settings-options">
+                            <div data-value="profile-settings" class="settings-button profile-option">
+                                <span class="material-symbols-outlined">person</span>
+                                <p class="profile-text" data-section="settings-window" data-value="profile-button">Perfil</p>
+                                <input class="toggle-setting-option toggle-profile" name="toggle-setting-option" type="radio" checked/>
+                            </div>
+                            <div data-value="language-settings" class="settings-button language-option">
+                                <span class="material-symbols-outlined">language</span>
+                                <p class="language-text" data-section="settings-window" data-value="language-button">Idioma</p>
+                                <input class="toggle-setting-option" name="toggle-setting-option" type="radio"/>
+                            </div>
+                            <div data-value="theme-settings" class="settings-button theme-option">
+                                <span class="material-symbols-outlined">dark_mode</span> 
+                                <p class="theme-text" data-section="settings-window" data-value="theme-button">Tema</p>
+                                <input class="toggle-setting-option" name="toggle-setting-option" type="radio"/>
+                            </div>
+                        </div>
+                        <div class="settings-content">
+                            <div class="settings profile-settings">
+                                <div class="image-container">
+                                    <div class="image-frame">
+                                        <img class="editable-profile-image" src="assets/default-profile.png"/>
+                                        <label for="image-picker" class="change-profile">
+                                            <span class="material-symbols-outlined">edit</span>
+                                            <input id="image-picker" type="file" accept=".png, .jpg, .jpeg"/>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="user-name-container">
+                                    <b class="label user-name-label" data-section="profile-content" data-value="user-name">Nombre de usuario</b>
+                                    <div class="user-name-content">
+                                        <p class="user-name">Usuario123</p>
+                                        <div class="normal-button-style edit-user-name-button">
+                                            <span class="material-symbols-outlined">edit</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="user-name-error-message">Campo vacio</p>
+                                <div class="email-container">
+                                    <b class="label email-label" data-section="profile-content" data-value="email">Email</b>
+                                    <div class="email-content">
+                                        <p class="email">Usuario123@gmail.com</p>
+                                        <div class="normal-button-style edit-email-button">
+                                            <span class="material-symbols-outlined">edit</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="email-error-message">Campo vacio</p>
+                            </div>
+                            <div class="settings language-settings">
+                                <div class="language-button spanish-button" data-value="es">
+                                    <img class="spanish-flag" src="assets/mx.svg"/>
+                                    <h2 class="spanish-text" data-section="language-content" data-value="spanish">Español</h2>
+                                    <input class="toggle-language" type="radio" name="toggle-language" checked/>
+                                </div>
+                                <div class="language-button english-button" data-value="en">
+                                    <img class="english-flag" src="assets/us.svg"/>
+                                    <h2 class="english-text" data-section="language-content" data-value="english">Ingles</h2>
+                                    <input class="toggle-language" type="radio" name="toggle-language"/>
+                                </div>
+                            </div>
+                            <div class="settings theme-settings">
+                                <div class="light-theme">
+                                    <span id="sun-icon" class="material-symbols-outlined">light_mode</span>
+                                    <input class="toggle-theme" type="radio" name="toggle-theme" checked/>
+                                </div>
+                                <div class="dark-theme">
+                                    <i id="moon-icon" class="fa-solid fa-moon" style="color: #ffffff;"></i>
+                                    <input class="toggle-theme" type="radio" name="toggle-theme"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="image-background">
+                <div class="show-image-container">
+                    <img class="image-displayed" src=""/>
+                    <div class="close-image">
+                        <span class="material-symbols-outlined">close</span>
+                    </div>
+                </div>
+            </div>
+            <div class="message">
+                <p class="message-text">Tarea Eliminada</p>
+            </div>
+            <div class="task-completed-message">
+                <span class="material-symbols-outlined check-icon">check</span>
+                <p class="task-completed-message-text" data-section="messages" data-value="task-completed-message-text">Tarea completada</p>
+            </div>
+            <div class="remove-reminder-message">
+                <p data-section="messages" data-value="remove-reminder-message">¿Desea remover el recordatorio?</p>
+                <div class="accept-button">
+                    <span class="material-symbols-outlined accept-icon">check</span>
+                </div>
+                <div class="cancel-button">
+                    <span class="material-symbols-outlined">close</span>
+                </div>
+            </div>
+            <div class="single-tasks-completed-background">
+                <div class="single-tasks-completed">
+                    <div class="single-tasks-completed-header">
+                        <div class="single-tasks-completed-return-button">
+                            <span class="material-symbols-outlined">arrow_back</span>
+                        </div>
+                        <h2 class="single-tasks-completed-title"></h2>
+                    </div>
+                    <div class="single-tasks-completed-content">
+                        <div class="no-single-tasks-message">
+                            <span class="material-symbols-outlined single-task-icon">task</span>
+                            <h2 class="no-single-tasks-message-text" data-section="messages" data-value="no-single-tasks-message-text">No hay tareas completadas</h2>
+                        </div>
+                        <div class="single-tasks-completed-container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="index.js"></script>
+</html>

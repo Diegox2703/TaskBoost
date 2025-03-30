@@ -1,0 +1,65 @@
+{
+    "header": {
+        "task-button": "Tasks",
+        "tag-button": "Tags",
+        "search-placeholder": "Search",
+        "task-creator-button": "Create",
+        "notification-button": "Notifications",
+        "profile-and-settings": "Profile and settings"
+    },
+    "header-menus": {
+        "note-creator-button": "Create note",
+        "checkbox-creator-button": "To-do list with checkboxes",
+        "single-task-creator-button": "Single task",
+        "no-notifications": "No notifications",
+        "pending-tasks": "Pending tasks",
+        "settings-button": "Settings",
+        "single-tasks-completed-button": "Completed tasks"
+    },
+    "window-header": {
+        "return-button": "Return",
+        "add-tag-button": "Add tag",
+        "add-reminder-button": "Add reminder",
+        "delete-task-button": "Delete"
+    },
+    "add-tag-window": {
+        "tag-text": "Tags",
+        "add-tag-placeholder": "Add tag",
+        "empty-field-error-message": "Empty field",
+        "characters-error-message": "Write a shorter tag"
+    },
+    "reminder-window": {
+        "reminder-text": "Reminder",
+        "empty-date-error-message": "Empty date",
+        "save-reminder": "Save",
+        "edit-reminder": "Edit"
+    },
+    "task-window-content": {
+        "title-placeholder": "Title",
+        "note-placeholder": "Note",
+        "single-task-placeholder": "Task",
+        "completed-tasks": "Completed tasks" 
+    },
+    "settings-window": {
+        "settings-text": "Settings",
+        "profile-button": "Profile",
+        "language-button": "language",
+        "theme-button": "Theme"
+    },
+    "profile-content": {
+        "user-name": "User name",
+        "email": "Email"
+    },
+    "language-content": {
+        "spanish": "Spanish",
+        "english": "English"
+    },
+    "messages": {
+        "no-tasks-text": "There are no tasks at the moment",
+        "no-tags-text": "There are no tags at the moment",
+        "no-tasks-in-tag-text": "There are no tasks in this tag",
+        "task-completed-message-text": "Task completed",
+        "remove-reminder-message": "¿Do you want to remove the reminder?",
+        "no-single-tasks-message-text": "There are no completed tasks"
+    }
+}
