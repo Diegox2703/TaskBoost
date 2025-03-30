@@ -538,6 +538,7 @@ p {
     font-size: 25px;
     font-weight: 600;
     color: #696969;
+    text-align: center;
 }
 
 .go-up-button {
@@ -858,6 +859,8 @@ p {
     height: 100vh;
     background: rgba(0, 0, 0, 0.486);
     z-index: 10;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
 .checkbox-tasks-window, .note-window, .single-task-window {
@@ -865,8 +868,8 @@ p {
     display: flex;
     flex-direction: column;
     background: #fff;
-    width: 29%;
-    min-width: 400px;
+    width: 100%;
+    max-width: 400px;
     padding: 20px;
     border-radius: 10px;
 }
@@ -1288,13 +1291,15 @@ p {
     width: 100%;
     height: 100%;
     z-index: 10;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
 .tag-window {
     background: #fff;
     border-radius: 10px;
-    width: 30%;
-    min-width: 380px;
+    width: 100%;
+    max-width: 380px;
     padding: 10px;
 }
 
@@ -1480,6 +1485,8 @@ p {
     height: 100vh;
     background: rgba(0, 0, 0, 0.486);
     z-index: 10;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
 .reminder-window {
@@ -1650,13 +1657,15 @@ p {
     height: 100vh;
     background: rgba(0, 0, 0, 0.486);
     z-index: 10;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
 .settings-window {
     background-color: #fff;
     border-radius: 10px;
-    flex-basis: 48%;
-    min-width: 520px;
+    width: 100%;
+    max-width: 900px;
     height: 400px;
     color: #696969;
 }
@@ -1802,6 +1811,8 @@ p {
 
 .user-name, .email {
     flex-grow: 1;
+    min-width: 10px;
+    word-break: break-all;
 }
 
 .edit-user-name-button, .edit-email-button, .save-user-name, .save-email {
@@ -1852,7 +1863,6 @@ p {
 
 .language-settings {
     display: none;
-    align-items: center;
     justify-content: center;
     gap: 10px;
     height: 300px;
@@ -2421,11 +2431,13 @@ body.dark-mode .delete-single-task-button:hover {
     width: 100%;
     height: 100%;
     z-index: 10;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
 .single-tasks-completed {
-    width: 60%;
-    min-width: 810px;
+    width: 100%;
+    max-width: 810px;
     height: 400px;
     background-color: rgb(220, 255, 255);
     border-radius: 10px;
@@ -2680,9 +2692,6 @@ body.dark-mode .delete-single-task-button:hover {
     .search-result-container {
         width: 180%;
     }
-    .single-tasks-completed {
-        min-width: 600px;
-    }
 }
 
 @media (width < 750px) {
@@ -2732,11 +2741,9 @@ body.dark-mode .delete-single-task-button:hover {
     .settings-window {
         min-width: 400px;
     }
-    .language-settings {
-        flex-wrap: wrap;
-    }
-    .theme-settings {
-        flex-wrap: wrap;
+    .language-settings, .theme-settings {
+        flex-direction: column;
+        align-items: center;
     }
     .spanish-button, .english-button {
         height: 130px;
@@ -2750,12 +2757,6 @@ body.dark-mode .delete-single-task-button:hover {
 }
 
 @media (width < 500px) {
-    .checkbox-tasks-window, .note-window, .single-task-window {
-        min-width: 300px;
-    }
-    .tag-window {
-        min-width: 300px;
-    }
     .dropdown-menu-notifications {
         width: 300px;
     }
