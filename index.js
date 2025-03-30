@@ -1500,7 +1500,8 @@ async function changeLanguage (lan) {
 
     const htmlElements = document.querySelectorAll("[data-section]");
 
-    let request = await fetch(`${lan}.json`);
+    let request = await fetch(`data/${lan}.json`);
+    console.log(request)
     let transladation = await request.json();
 
     htmlElements.forEach(element=>{

@@ -71,7 +71,7 @@ p {
     letter-spacing: 3px;
     color: rgb(0, 221, 221);
     text-shadow: 3px 2px 1px rgb(0, 99, 99);
-    width: 200px;
+    width: 230px;
     padding: 7px;
     user-select: none;
 }
@@ -573,7 +573,7 @@ p {
     font-size: 16px;
     font-weight: 600;
     padding-right: 24px;
-    background-image: url("arrowdown.svg");
+    background-image: url("assets/arrowdown.svg");
     background-repeat: no-repeat;
     background-position: right;
     width: fit-content;
